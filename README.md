@@ -1,23 +1,33 @@
-# House Prices - Advanced Regression Techniques (Kaggle)
+# 🏆 Kaggle Competitions Playground
 
-This repository contains my end-to-end machine learning solution for the Kaggle Ames Housing dataset.
+Welcome to my Kaggle repository! This is a monorepo containing my end-to-end machine learning solutions for various Kaggle competitions. 
 
-## 🏆 Results
-- **Model**: XGBoost Regressor
-- **Validation Strategy**: 5-Fold Cross Validation (CV)
-- **Final CV RMSE**: `0.11095` (aligned with official RMSLE metric)
+I focus on robust data preprocessing, extensive feature engineering, rigorous hyperparameter tuning, and avoiding data leakage.
 
-## 🚀 Project Workflow
-1. **Exploratory Data Analysis (EDA)**: Analyzed `SalePrice` distribution, applied `log1p` transformation to align with RMSLE.
-2. **Data Preprocessing**: Handled missing values based on domain knowledge (e.g., NaN in garage columns means "No Garage"). Used Ordinal and One-Hot encoding.
-3. **Feature Engineering**: Created composite features like `TotalSF` (Total Square Feet), `TotalBath`, and `HouseAge`, which significantly improved model performance.
-4. **Outlier Removal**: Dropped extreme outliers (e.g., `GrLivArea > 4000` but cheap price).
-5. **Model Tuning**: Conducted a rigorous 5-stage grid search (tuning `n_estimators`, tree structure, subsampling, learning rate, and regularization parameters) to prevent overfitting and optimize CV score.
+## 📁 Completed Competitions
 
-## 📁 Repository Structure
-- `notebooks/`: Contains the complete Jupyter Notebook.
-- `outputs/`: Contains the final `submission.csv` file.
-- `requirements.txt`: Python dependencies.
+| Competition | Task | Model | Local CV Score | Code Link |
+| :--- | :--- | :--- | :--- | :--- |
+| **[House Prices - Advanced Regression](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)** | Regression | XGBoost | **0.11095** (RMSE) | [View Code](./01_House_Prices/) |
 
-## 🛠️ Built With
-- Python 3.11, Pandas, NumPy, Scikit-Learn, XGBoost, Matplotlib, Seaborn
+*(More competitions like Titanic and Digit Recognizer will be added soon...)*
+
+## 🛠️ Tech Stack & Tools
+- **Languages**: Python 3
+- **Data Manipulation**: Pandas, NumPy
+- **Machine Learning**: Scikit-Learn, XGBoost
+- **Data Visualization**: Matplotlib, Seaborn
+- **Environment**: Kaggle Notebooks, Jupyter
+
+## 📂 Repository Structure
+```text
+Kaggle_Competitions_Repository/
+│
+├── 01_House_Prices/            # Ames Housing Dataset
+│   ├── README.md               # Project-specific documentation
+│   ├── house_prices_xgb.ipynb  # Complete EDA, Feature Eng, and Modeling
+│   ├── requirements.txt        # Dependencies for this project
+│   └── outputs/                # Final submission files
+│
+├── .gitignore                  # Global ignore (protects from uploading large CSVs)
+└── README.md                   # This file
